@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import Card from "./Card";
 function Cards() {
+  const [moves, setMoves] = useState(0);
+
   const [cards, setCards] = useState(
     [
       { id: 0, name: "David Lyon", status: "", img: "/images/coffeebean1.png" },
@@ -41,10 +43,30 @@ function Cards() {
         status: "",
         img: "/images/coffeebean4.png",
       },
-      { id: 4, name: "David Lyon5", status: "", img: "/images/coffeebean5.png" },
-      { id: 4, name: "David Lyon5", status: "", img: "/images/coffeebean5.png" },
-      { id: 5, name: "David Lyon6", status: "", img: "/images/coffeebean6.png" },
-      { id: 5, name: "David Lyon6", status: "", img: "/images/coffeebean6.png" },
+      {
+        id: 4,
+        name: "David Lyon5",
+        status: "",
+        img: "/images/coffeebean5.png",
+      },
+      {
+        id: 4,
+        name: "David Lyon5",
+        status: "",
+        img: "/images/coffeebean5.png",
+      },
+      {
+        id: 5,
+        name: "David Lyon6",
+        status: "",
+        img: "/images/coffeebean6.png",
+      },
+      {
+        id: 5,
+        name: "David Lyon6",
+        status: "",
+        img: "/images/coffeebean6.png",
+      },
     ].sort(() => Math.random() - 0.5)
   );
 
@@ -65,12 +87,14 @@ function Cards() {
         cards[previousCardState].status = "unmatched";
         cards[currentCard].status = "unmatched";
         setCards([...cards]);
-      }, 1000);
+      }, 2000);
     }
   };
 
   const clickhandler = (index) => {
     if (index !== previousIndex.current) {
+      setMoves((moves) => moves + 1);
+
       if (cards[index].status === "active matched") {
         alert("already matched");
       } else {
@@ -90,18 +114,23 @@ function Cards() {
   };
 
   return (
-    <div className="container">
-      {cards.map((card, index) => {
-        return (
-          <Card
-            card={card}
-            key={index}
-            index={index}
-            clickhandler={clickhandler}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div className="container">
+        {cards.map((card, index) => {
+          return (
+            <Card
+              card={card}
+              key={index}
+              index={index}
+              clickhandler={clickhandler}
+            />
+          );
+        })}
+      </div>
+      <div className="bold">
+        <h1>Moves: {moves}</h1>
+      </div>
+    </>
   );
 }
 

@@ -1,7 +1,6 @@
 
 import './App.css';
 import Cards from './components/Cards';
-import coffeebeanLOGO from './components/coffeebeanLOGO.png';
 
 function App() {
   return (
