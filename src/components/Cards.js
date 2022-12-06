@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
+import Button from '@mui/material/Button';
 import Card from "./Card";
+
 function Cards() {
   const [moves, setMoves] = useState(0);
 
@@ -113,6 +115,10 @@ function Cards() {
     }
   };
 
+  const restart = () =>{
+    setMoves(0);
+  };
+
   return (
     <>
       <div className="container">
@@ -128,7 +134,11 @@ function Cards() {
         })}
       </div>
       <div className="bold">
-        <h1>Moves: {moves}</h1>
+      <Button onClick={restart} color="primary" variant="contained">
+            Restart
+          </Button>
+        
+     <h1>Moves: {moves}</h1>
       </div>
     </>
   );
