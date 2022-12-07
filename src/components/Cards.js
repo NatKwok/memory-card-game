@@ -134,11 +134,13 @@ function Cards() {
         })}
       </div>
       <div className="bold">
-      <Button onClick={restart} color="primary" variant="contained">
+        <br></br>
+      <Button onClick={restart} variant="outlined">
             Restart
           </Button>
         
      <h1>Moves: {moves}</h1>
+
       </div>
     </>
   );

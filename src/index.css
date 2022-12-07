@@ -12,7 +12,7 @@ body {
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
 }
 
-h1{
+h1, label{
   text-align: center;
   color: #fff;
     text-shadow:
@@ -118,7 +118,7 @@ Button {
   position: relative;
   padding: 12px 36px;
   margin: 10px 0;
-  color: #03e9f4;
+  color: #bc13fe,;
   font-size: 1.4em;
   letter-spacing: 2px;
   font-family: "Roboto";
@@ -128,8 +128,15 @@ Button {
 }
 
 Button:hover {
-  background-color: #03e9f4;
-  color: #212121;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-    0 0 200px #03e9f4;
+  background-color: #bc13fe;
+  color: #ffffff;
+  box-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #bc13fe,
+  0 0 82px #bc13fe,
+  0 0 92px #bc13fe,
+  0 0 102px #bc13fe,
+  0 0 151px #bc13fe;
 }
