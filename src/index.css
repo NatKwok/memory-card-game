@@ -12,7 +12,14 @@ body {
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
 }
 
-h1, label{
+#nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+
+h1, label, h2{
   text-align: center;
   color: #fff;
     text-shadow:
@@ -118,7 +125,7 @@ Button {
   position: relative;
   padding: 12px 36px;
   margin: 10px 0;
-  color: #bc13fe,;
+  color: #ffffff,;
   font-size: 1.4em;
   letter-spacing: 2px;
   font-family: "Roboto";

@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import Card from "./Card";
+import HighScore from "./HighScore";
 
 function Cards() {
   const [moves, setMoves] = useState(0);
+  const [clearedCards, setClearedCards] = useState({});
 
   const [cards, setCards] = useState(
     [
@@ -115,8 +117,16 @@ function Cards() {
     }
   };
 
-  const restart = () =>{
+  /*const checkCompletion = () => {
+
+    if (Object.keys(clearedCards).length === uniqueCardsArray.length) {
+      setShowModal(true);
+    }
+  };*/
+
+  const restart = () => {
     setMoves(0);
+    window.location.reload(false);
   };
 
   return (
@@ -133,14 +143,15 @@ function Cards() {
           );
         })}
       </div>
-      <div className="bold">
-        <br></br>
-      <Button onClick={restart} variant="outlined">
-            Restart
-          </Button>
-        
-     <h1>Moves: {moves}</h1>
 
+      <h2>Moves: {moves}</h2>
+
+      <h2>HighScore: {HighScore}</h2>
+
+      <div className="bold">
+        <Button onClick={restart} variant="outlined">
+          Restart
+        </Button>
       </div>
     </>
   );
