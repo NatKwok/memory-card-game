@@ -97,11 +97,10 @@ function Cards() {
 
   const clickhandler = (index) => {
     if (index !== previousIndex.current) {
-      setMoves((moves) => moves + 1);
-
       if (cards[index].status === "active matched") {
         alert("already matched");
       } else {
+        setMoves((moves) => moves + 1);
         if (previousCardState === -1) {
           previousIndex.current = index;
           cards[index].status = "active";
@@ -117,15 +116,13 @@ function Cards() {
     }
   };
 
-  /*const checkCompletion = () => {
-
-    if (Object.keys(clearedCards).length === uniqueCardsArray.length) {
-      setShowModal(true);
+  const gamecomplete = () => {
+    if (Object.keys(clearedCards).length === cards.length) {
+      alert("Game Finished");
     }
-  };*/
+  };
 
   const restart = () => {
-    setMoves(0);
     window.location.reload(false);
   };
 
@@ -144,12 +141,10 @@ function Cards() {
         })}
       </div>
 
-      <h2>Moves: {moves}</h2>
-
-      <h2>HighScore: {HighScore}</h2>
+      <h2 className="text">Moves: {moves}</h2>
 
       <div className="bold">
-        <Button onClick={restart} variant="outlined">
+        <Button onClick={restart} variant="outlined" className="button">
           Restart
         </Button>
       </div>
